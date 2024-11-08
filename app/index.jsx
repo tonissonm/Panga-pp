@@ -12,39 +12,27 @@ const app = () => {
   if(!isLoading && isLoggedIn) return <Redirect href="/home"/>;
 
   return (
-    <SafeAreaView className="bg-primary h-full">
-      <ScrollView contentContainerStyle={{ height: '100%'}}>
-        <View className="w-full justify-center items-center min-h-[85vh] px-4">
-          <Image
-            source={images.logo}
-            className="w-[130px] h-[84px]"
-            resizeMode="contain"
-          />
-          <Image source={images.cards}
-          className="max-w-[380px] w-full h-[300px]"
-          resizeMode="contain"
-          />
-
-            <View className="relative mt-5">
-              <Text className="text-3xl text-white font-bold text-center">
-                Discover Endless Possibilities with {''}<Text className="text-secondary-200">Aora</Text></Text>
-                <Image 
-                source={images.path} 
-                className="w-[136px] h-[15px] absolute-bottom-2 -right-8" 
-                resizeMode="contain"/>
-            </View>
-
-            <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">Where creativity meets innovation: embark on a journey of limitless exploration with Aora</Text>
-
-            <CustomButton 
-            title="Continue with Email"
-            handlePress={() => router.push('/sign-in')}
-            containerStyles="w-full mt-7"
-            />
+    <SafeAreaView style={{ backgroundColor: '#008080', height: '100%' }}>
+    <ScrollView contentContainerStyle={{ height: '100%' }}>
+      <View style={{ justifyContent: 'center', alignItems: 'center', minHeight: '85%', paddingHorizontal: 16 }}>
+      
+        <Image source={images.logo} style={{ width: 440, height: 204 }} resizeMode="contain" />
+        {/*<Image source={images.cards} style={{ maxWidth: 380, width: '100%', height: 300 }} resizeMode="contain" />*/}
+        <View style={{ marginTop: 20, alignItems: 'center' }}>
+          <Text style={{ fontSize: 24, color: '#FFFFFF', fontWeight: 'bold', textAlign: 'center' }}>
+          Sinu finantselu,<Text style={{ color: '#F65C06'}}>sinu kontrolli all</Text> 
+          </Text>
         </View>
-      </ScrollView>
-      <StatusBar backgroundColor='#161622' style='light'/>
-    </SafeAreaView>
+        
+        <CustomButton 
+          title="Liigu edasi" 
+          handlePress={() => router.push('/sign-in')}  
+          containerStyles={{ width: '100%', paddingTop:20, color:'#fff'}} 
+        />
+      </View>
+    </ScrollView>
+    <StatusBar backgroundColor="#B64405" barStyle="light-content" />
+  </SafeAreaView>
   );
 }
 
